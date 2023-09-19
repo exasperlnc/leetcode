@@ -1,11 +1,10 @@
 def two_sum(nums, target)
-  nums_indices = {}
-  answers = []
-
-  # go through the nums
-  # discover the complement 
-  # if complement exists, add that index to the answers 
-  # else save the complement to the nums_indices
-  # return the answers array 
-
+  num_indices = {}
+  nums.each_with_index do |num, index|
+    if num_indices[target - num]
+      return [num_indices[target - num], index]
+    else
+      num_indices[num] = index
+    end
+  end
 end
