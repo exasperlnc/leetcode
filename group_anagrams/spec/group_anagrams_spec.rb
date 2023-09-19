@@ -4,7 +4,7 @@ require 'rspec'
 describe 'example' do
   before :each do
     @in_1 = ["eat","tea","tan","ate","nat","bat"]
-    @out_1 = [["bat"],["nat","tan"],["ate","eat","tea"]]
+    @out_1 = [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
 
     @in_2 = [""]
     @out_2 = [[""]]
