@@ -16,3 +16,5 @@ I enjoyed this problem. Originally I was saving values to a hash using the tally
 
 Just got a solution that solves the problems, but it's not very efficient. The original problem doesn't allow using the division operation, so I need to compe up with a solution that doesn't involve recalculating the entire operation again. 
 
+New solution is much more efficient, operating in linear time.
+
