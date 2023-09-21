@@ -8,6 +8,9 @@ describe 'example' do
 
     @in_2 = [0,3,7,2,5,8,4,6,0,1]
     @out_2 = 9
+
+    @in_3 = [1,2,0,1]
+    @out_3 = 3
   end
 
   it '1' do
@@ -16,5 +19,9 @@ describe 'example' do
 
   it '2' do
     expect(longest_consecutive(@in_2)).to eq(@out_2)
+  end
+
+  it '3' do
+    expect(longest_consecutive(@in_3)).to eq(@out_3)
   end
 end
