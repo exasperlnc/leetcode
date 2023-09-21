@@ -7,30 +7,28 @@ def is_valid_sudoku(board)
   # check each column
   (0..8).each do |index|
     # return false if repeat
-    checker = {}
+    checker = []
     board.each do |row|
-      checker[index] ||= []
       next if row[index] == '.'
-      checker[index] << row[index]
+      checker << row[index]
     end
     return false if checker.tally.values.any? { |value| value > 1}
   end
-  
-  # check each 9x9 set
-    # set 1 is row[0-2] and col[0-2]
-    # set 2 is row[0-2] and col[3-5]
-    # set 3 is row[0-2] and col[6-8]
-    
-    # set 4 is row[3-5] and col[0-2]
-    # set 5 is row[3-5] and col[3-5]
-    # set 6 is row[3-5] and col[6-8]
-
-    # set 7 is row[6-8] and col[0-2]
-    # set 8 is row[6-8] and col[3-5]
-    # set 9 is row[6-8] and col[6-8]
-
-
-
-    #first three columns
+  y_cap = 0
+  until y_cap == 9
+    x_cap = 0
+    until x_cap == 9
+      box = []
+      (y_cap...(y_cap + 3)).each do |y|
+        (x_cap...(x_cap + 3)).each do |x|
+          next if board[x][y] == '.'
+          box << board[x][y]
+        end
+        return false if box.tally.values.any? { |value| value > 1 }
+      end
+      x_cap += 3
+    end
+    y_cap += 3
+  end
   return true
 end
