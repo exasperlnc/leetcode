@@ -10,7 +10,7 @@ describe 'example' do
     @out_2 = []
 
     @in_3 =  [0,0,0]
-    @out_3 =  [0,0,0]
+    @out_3 =  [[0,0,0]]
   end
 
   it '1' do
