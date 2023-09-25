@@ -1,21 +1,31 @@
 def three_sum(nums)
   # solutions = []
-
+  solutions = []
   # sort nums
-
+  sorted = nums.sort
   # iterate through nums
+  sorted.each_with_index do |num, index|
+    break if num > 0
+    # set the goal number as the current num
 
-  # set the goal number as the current num
 
   # us l_index and r_index
+    l_index = 0
+    r_index = sorted.length - 1
 
   # compare with spaceship 
-
+    case sorted[l_index] + sorted[r_index] <=> -num 
   # if 1, decrement r
+      when 1 
+        r_index -= 1
 
   # if 0, add all nums to the solutions array 
-
+      when 0
+        solutions << [num, sorted[l_index], sorted[r_index]]
   # if -1, increment l 
-
-  # return solutions
+      when -1
+        l_index += 1
+      end
+    end
+  return solutions
 end
