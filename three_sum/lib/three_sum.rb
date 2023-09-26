@@ -6,7 +6,7 @@ def three_sum(nums)
   # iterate through nums
   sorted.each_with_index do |num, index|
     next if index.positive? && num == sorted[index - 1]
-    # break if num > 0
+    break if num > 0
     # set the goal number as the current num
 
 
