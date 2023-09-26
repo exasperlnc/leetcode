@@ -5,7 +5,7 @@ def three_sum(nums)
   sorted = nums.sort
   # iterate through nums
   sorted.each_with_index do |num, index|
-    next if index.positive? && num == nums[index - 1]
+    next if index.positive? && num == sorted[index - 1]
     # break if num > 0
     # set the goal number as the current num
 
@@ -23,7 +23,7 @@ def three_sum(nums)
         when 0
           solutions << [num, sorted[l_index], sorted[r_index]]
           l_index += 1
-          l_index += 1 while nums[l_index] == nums[l_index - 1] && l_index < r_index
+          l_index += 1 while sorted[l_index] == sorted[l_index - 1] && l_index < r_index
     # if -1, increment l 
         when -1
           l_index += 1
