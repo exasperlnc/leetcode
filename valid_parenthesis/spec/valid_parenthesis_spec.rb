@@ -17,19 +17,19 @@ describe 'example' do
   end
 
   it '1' do
-    expect(@in_1).to eq(@out_1)
+    expect(valid_parenthesis(@in_1)).to eq(@out_1)
   end
 
   it '2' do
-    expect(@in_2).to eq(@out_2)
+    expect(valid_parenthesis(@in_2)).to eq(@out_2)
     
   end
 
   it '3' do
-    expect(@in_3).to eq(@out_3)
+    expect(valid_parenthesis(@in_3)).to eq(@out_3)
   end
 
   it '4' do
-    expect(@in_4).to eq(@out_4)
+    expect(valid_parenthesis(@in_4)).to eq(@out_4)
   end
 end
