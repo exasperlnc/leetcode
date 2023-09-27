@@ -1,9 +1,19 @@
 def valid_parenthesis(string)
   # add items to an array if they are opener strings
-
-  # pop them off the end and compare them when you hit a closer
-
-  # return false if they don't match
-
-  # return true at the bottom
+  heap = []
+  string.chars.each do |char|
+    if ['[', '(', '{'].include? char
+      heap << char
+    else
+      if char == ']'
+        return false if heap.pop != '['
+      elsif char == ')'
+        return false if heap.pop != '('
+      else
+        return false if heap.pop != '{'
+      end
+    end
+  end
+  return false if !heap.empty?
+  return true
 end

@@ -14,6 +14,9 @@ describe 'example' do
 
     @in_4 = "([)]"
     @out_4 = false
+
+    @in_5 = "("
+    @out_5 = false
   end
 
   it '1' do
@@ -31,5 +34,9 @@ describe 'example' do
 
   it '4' do
     expect(valid_parenthesis(@in_4)).to eq(@out_4)
+  end
+
+  it '5' do
+    expect(valid_parenthesis(@in_5)).to eq(@out_5)
   end
 end
