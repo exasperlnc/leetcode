@@ -7,6 +7,8 @@ RSpec.describe MinStack do
     stack = MinStack.new()
 
     expect(stack).to be_a(MinStack)
+    expect(stack.mins).to eq([])
+    expect(stack.stack).to eq([])
   end
 
   it 'push' do
@@ -14,7 +16,7 @@ RSpec.describe MinStack do
 
     stack.push(5)
 
-    expect(stack.stack).to eq([[5,5]])
+    expect(stack.stack).to eq([5])
   end
 
   it 'pop' do
@@ -26,7 +28,7 @@ RSpec.describe MinStack do
 
     stack.pop
 
-    expect(stack.stack).to eq([[5,5]])
+    expect(stack.stack).to eq([5])
   end
 
   it 'top' do

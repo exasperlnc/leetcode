@@ -1,8 +1,9 @@
 class MinStack
-  attr_reader :stack, :current_min
+  attr_reader :stack, :mins
   
   def initialize()
     @stack = []
+    @mins = []
   end
 
   def push(num)
