@@ -7,24 +7,27 @@ class MinStack
   end
 
   def push(num)
-    if stack.empty? 
-      @stack << [num, num]
+    if @mins.empty?
+      @stack << num
+      @mins << num
     else
-      current_min = [stack[-1][1], num].min
-      @stack << [num, current_min]
+      current_min = [mins[-1], num].min
+      @stack << num
+      @mins << current_min
     end
   end
 
 
   def pop
     @stack = @stack[0...-1]
+    @mins = @mins[0...-1]
   end
 
   def top
-    @stack[-1][0]
+    @stack[-1]
   end
 
   def get_min
-    @stack[-1][1]
+    @mins[-1]
   end
 end
