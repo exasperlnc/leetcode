@@ -1,19 +1,16 @@
 def valid_parenthesis(string)
-  # add items to an array if they are opener strings
-  heap = []
+  stack = []
   string.chars.each do |char|
-    if ['[', '(', '{'].include? char
-      heap << char
-    else
-      if char == ']'
-        return false if heap.pop != '['
-      elsif char == ')'
-        return false if heap.pop != '('
-      else
-        return false if heap.pop != '{'
-      end
+    case char
+    when '[', '{', '('
+      stack << char
+    when ')'
+      return false if stack.pop != '('
+    when ']'
+      return false if stack.pop != '['
+    when '}'
+      return false if stack.pop != '{'
     end
   end
-  return false if !heap.empty?
-  return true
+  stack.empty?
 end
