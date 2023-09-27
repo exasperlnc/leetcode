@@ -15,12 +15,14 @@ class MinStack
       @stack << num
       @mins << current_min
     end
+    nil
   end
 
 
   def pop
     @stack = @stack[0...-1]
     @mins = @mins[0...-1]
+    nil
   end
 
   def top
