@@ -17,19 +17,24 @@ def length_of_longest_substring(s)
       else
           # go to the first appearance of the letter in the string and reset the string to that 
           new_string = ''
-          found = false 
+          found = false
           string_saver.chars.each do |char|
-              if !found
-                  if char = letter
-                      found = true
-                      hash.clear
-                  end
-              else
-                  new_string << char
+            if !found
+                if char == letter
+                  found = true
+                  hash.clear
+                  new_string << letter 
                   hash[char] = true
-              end
+                end
+              else
+                new_string << char
+                hash[char] = true
+            end
           end
-          string_saver = new_string 
+          if !new_string.include?(letter)
+            new_string << letter
+          end
+          string_saver = new_string
       end
       if string_saver.length > max
           max = string_saver.length 
