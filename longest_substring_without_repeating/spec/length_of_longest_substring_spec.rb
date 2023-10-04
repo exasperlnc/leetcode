@@ -11,6 +11,9 @@ describe 'example' do
 
     @in_3 = "aab"
     @out_3 = 2
+
+    @in_4 = "aabaab!bb"
+    @out_4 = 3
   end
 
   it '1' do
@@ -23,5 +26,9 @@ describe 'example' do
 
   it '3' do
     expect(length_of_longest_substring(@in_3)).to eq(@out_3)
+  end
+
+  it '4' do
+    expect(length_of_longest_substring(@in_4)).to eq(@out_4)
   end
 end
