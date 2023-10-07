@@ -1,10 +1,6 @@
 def search_matrix(matrix, target)
-  # search the beginning of each array to find one that is greater than or equal to the target 
-
-  # if its equal return true
+  row_index = matrix.map(&:last).bsearch_index {|last| target <= last}
   
-  # if its greater search the previous array for the target 
-    #true if found
-
-  # return false
+  cell = matrix[row_index].bsearch {|num,_| target <=> num}
+  return cell ? true : false
 end
