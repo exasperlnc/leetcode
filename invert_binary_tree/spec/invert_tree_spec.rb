@@ -22,7 +22,14 @@ describe 'example' do
   end
 
   it '1' do
-    expect(invert_tree(@tree_1.left.val)).to eq(@out_1.right.val)
-    expect(invert_tree(@tree_1.right.val)).to eq(@out_1.left.val)
+    expect(@tree_1.right.val).to_not eq(@out_1.right.val)
+    expect(@tree_1.left.val).to_not eq(@out_1.left.val)
+
+    invert_tree(@tree_1)
+    
+    expect(@tree_1.right.val).to eq(@out_1.right.val)
+    expect(@tree_1.left.val).to eq(@out_1.left.val)
+
+    expect(@tree_1.left.left.val).to eq(@out_1.left.left.val)
   end
 end
