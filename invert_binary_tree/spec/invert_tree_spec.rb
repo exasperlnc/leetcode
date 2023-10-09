@@ -1,3 +1,4 @@
+require './lib/tree_node'
 require './lib/invert_tree'
 require 'rspec'
 
