@@ -3,7 +3,6 @@ require './lib/max_depth'
 
 RSpec.describe 'max depth' do
   it '1' do
-    root = [3,9,20,null,null,15,7]
     root = TreeNode.new(3)
     root.left = TreeNode.new(9)
     root.left = TreeNode.new(20)
