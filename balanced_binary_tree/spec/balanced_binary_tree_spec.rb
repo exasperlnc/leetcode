@@ -26,4 +26,8 @@ RSpec.describe 'example' do
   it '2' do
     expect(is_balanced(@root2)).to eq(false)
   end
+
+  it '3' do
+    expect(is_balanced(nil)).to eq(true)
+  end
 end
