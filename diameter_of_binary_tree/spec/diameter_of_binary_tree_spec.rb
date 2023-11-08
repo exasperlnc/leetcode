@@ -19,4 +19,8 @@ RSpec.describe 'examples' do
   it '2' do
     expect(diameter_of_binary_tree(@root2)).to eq(1)
   end
+
+  it '3' do
+    expect(diameter_of_binary_tree(nil)).to eq(0)
+  end
 end
