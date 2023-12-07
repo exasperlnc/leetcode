@@ -1,9 +1,14 @@
 def is_subtree?(p, q)
-  # compare the trees 
-  # if p  == q, return true
-  # els is_subtree?(p.left, q)
-  # els is_subtree?(p.right, q)
-  # else false 
+  return true if p.nil? && q.nil?
+  return true if q.nil?
+  return false if p.nil?
+
+  if same_tree?(p, q)
+    return true
+  else
+    is_subtree?(p.left, q) || 
+    is_subtree?(p.right, q)
+  end
 end
 
 def same_tree?(p, q)
