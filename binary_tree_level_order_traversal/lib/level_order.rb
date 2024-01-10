@@ -1,34 +1,24 @@
 require 'tree_node'
 
 def level_order(root)
-  # create result to store vals
   result = []
 
-  # create cur array to store nodes
-  cur_level = []
-  cur_level << root if root
-  # put root in cur
+  cur = []
+  next_l = []
+  cur << root
 
-  # until cur.empty?
-  until cur_level.empty?
-    # save all cur vals here 
+  until cur.empty?
     vals = []
-    # save next level here
-    next_level = []
-
-    # iterate through nodes in cur and save the vals to val, then put children in next
-    cur_level.each do |node|
+    until cur.empty?
+      node = cur.shift
       vals << node.val
-      next_level << node.left if node.left
-      next_level << node.right if node.right
+      next_l << node.left if node.left
+      next_l << node.right if node.right
     end
-    # result << vals
-    result << vals
 
-    # set cur level to next
-
-    cur_level = next_level
+      result << vals
+      cur = next_l
+      next_l = []
   end
-  return result
-  # return result
+  result
 end
