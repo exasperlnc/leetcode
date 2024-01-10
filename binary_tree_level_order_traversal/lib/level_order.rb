@@ -1,19 +1,20 @@
 require 'tree_node'
 
 def level_order(root)
-  # create result array to store vals
-  
-  # save current level as cur
+  # create result to store vals
 
-  # put the root in cur
+  # create cur array to store nodes
+  # put root in cur
 
-  # while cur
-    # put the cur vals in result
-    # iterate through the nodes and put their children inside next level
-  
-    # switch cur to next
+  # until cur.empty? 
+    # save all cur vals here 
+    # save next level here
+
+    # iterate through nodes in cur and save the vals to val, then put children in next
+    
+    # result << vals
+
+    # set cur level to next
 
   # return result
-    
-
 end
