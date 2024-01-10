@@ -4,8 +4,8 @@ require 'rspec'
 
 describe 'lowest common ancestor' do
   before :all do
-    @p1 = 2
-    @q1 = 8
+    @p1 = TreeNode.new(2)
+    @q1 = TreeNode.new(8)
     @out1 = 6
     @root1 = TreeNode.new(6)
     @root1.left = TreeNode.new(2)
@@ -17,8 +17,8 @@ describe 'lowest common ancestor' do
     @root1.left.right.left = TreeNode.new(3)
     @root1.left.right.right = TreeNode.new(5)
 
-    @p2 = 2
-    @q2 = 4
+    @p2 = TreeNode.new(2)
+    @q2 = TreeNode.new(4)
     @out2 = 2
     @root2 = TreeNode.new(6)
     @root2.left = TreeNode.new(2)
