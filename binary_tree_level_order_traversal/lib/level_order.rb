@@ -6,7 +6,7 @@ def level_order(root)
 
   # create cur array to store nodes
   cur_level = []
-  cur_level << root
+  cur_level << root if root
   # put root in cur
 
   # until cur.empty?
@@ -19,8 +19,8 @@ def level_order(root)
     # iterate through nodes in cur and save the vals to val, then put children in next
     cur_level.each do |node|
       vals << node.val
-      next_level << node.left
-      next_level << node.right
+      next_level << node.left if node.left
+      next_level << node.right if node.right
     end
     # result << vals
     result << vals
