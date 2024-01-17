@@ -12,7 +12,7 @@ describe 'lowest common ancestor' do
     @root1.right.left = TreeNode.new(1)
     @root1.right.right= TreeNode.new(5)
 
-    @out2 = 2
+    @out2 = 3
     @root2 = TreeNode.new(3)
     @root2.left = TreeNode.new(3)
     @root2.left.left = TreeNode.new(4)

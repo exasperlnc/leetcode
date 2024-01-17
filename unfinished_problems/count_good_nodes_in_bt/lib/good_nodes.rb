@@ -1,14 +1,20 @@
 def good_nodes(root)
-  # declare max node as or = root  
+  $goodies = 1
+  max = root.val
+
 
   # call good nodes on left and right
+  good_node(root.left, max) if root.left
+  good_node(root.right, max) if root.right
 
-  # 
-
-  # +1 if the current root is >= max node 
+  $goodies
 end
 
-def good_node(root, max=root)
-  # goodies += 1 if root >= max
+def good_node(root, max)
+  $goodies += 1 if root.val >= max
+  max = root.val if root.val > max
+  
+  good_node(root.left, max) if root.left
+  good_node(root.right, max) if root.right
 
 end
