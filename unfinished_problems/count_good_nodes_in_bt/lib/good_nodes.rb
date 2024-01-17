@@ -2,8 +2,6 @@ def good_nodes(root)
   $goodies = 1
   max = root.val
 
-
-  # call good nodes on left and right
   good_node(root.left, max) if root.left
   good_node(root.right, max) if root.right
 
@@ -16,5 +14,4 @@ def good_node(root, max)
   
   good_node(root.left, max) if root.left
   good_node(root.right, max) if root.right
-
 end
