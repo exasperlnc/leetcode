@@ -1,8 +1,14 @@
 def kth_smallest(root, k)
-  # store answers in array 
+  # store elements in a stack 
+  # store how many elements we have visited, first visit should be 1 (k is 1 indexed) 
+  # store the current node 
 
-  # accumulate all the values
+  # while curr and stack
+    #stack.push(cur)
+    #cur = cur.left
 
-  # get the kth lowest ones 
-
+  # cur = stack.pop
+  # n+= 1
+  #if n==k
+    # return cur.val
 end
