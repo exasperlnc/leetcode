@@ -13,14 +13,21 @@ RSpec.describe Trie do
     expect(trie.root.children["a"].children["p"].children["p"].children["l"].children["e"].children["*"]).to eq(true)
   end
   
-  it 'tests insert' do
+  it 'inserts' do
     trie = Trie.new()
     trie.insert("apple")
 
     expect(trie.search("apple")).to eq(true)
   end
 
-  
+  it 'starts with' do
+    trie = Trie.new()
+    trie.insert("apple")
+
+    expect(trie.starts_with("app")).to eq(true)
+    expect(trie.starts_with("nope")).to eq(false)
+  end
+
   xit '1' do
     trie = Trie.new()
     trie.insert(apple)

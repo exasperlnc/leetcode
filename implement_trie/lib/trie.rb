@@ -1,3 +1,4 @@
+require 'trie_node'
 class Trie
   attr_reader :root
   def initialize()
@@ -46,7 +47,16 @@ class Trie
   :rtype: Boolean
 =end
   def starts_with(prefix)
+    current_node = @root
 
+    for char in prefix.chars
+      if current_node.children["#{char}"]
+        current_node = current_node.children["#{char}"]
+      else
+        return false
+      end
+      return true
+    end
   end
 
 
