@@ -10,8 +10,16 @@ RSpec.describe Trie do
     expect(trie.root.children["a"].children["p"].children["p"]).to be_a(TrieNode)
     expect(trie.root.children["a"].children["p"].children["p"].children["l"]).to be_a(TrieNode)
     expect(trie.root.children["a"].children["p"].children["p"].children["l"].children["e"]).to be_a(TrieNode)
-    expect(trie.root.children["a"].children["p"].children["p"].children["l"].children["e"].children["*"]).to eq(1)
+    expect(trie.root.children["a"].children["p"].children["p"].children["l"].children["e"].children["*"]).to eq(true)
   end
+  
+  it 'tests insert' do
+    trie = Trie.new()
+    trie.insert("apple")
+
+    expect(trie.search("apple")).to eq(true)
+  end
+
   
   xit '1' do
     trie = Trie.new()

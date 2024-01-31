@@ -19,7 +19,7 @@ class Trie
         current_node.children["#{char}"] = new_node
         current_node = new_node
       end
-      current_node.children["*"] = 1
+      current_node.children["*"] = true
     end
  end
 
@@ -29,7 +29,15 @@ class Trie
   :rtype: Boolean
 =end
  def search(word)
-
+  current_node = @root
+  for char in word.chars
+    if current_node.children["#{char}"]
+      current_node = current_node.children["#{char}"]
+    else
+      return false
+    end
+    return true
+  end
  end
 
 
@@ -37,9 +45,9 @@ class Trie
   :type prefix: String
   :rtype: Boolean
 =end
- def starts_with(prefix)
-      
- end
+  def starts_with(prefix)
+
+  end
 
 
 end
