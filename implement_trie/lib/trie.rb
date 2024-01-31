@@ -1,7 +1,7 @@
 class Trie
   attr_reader :root
   def initialize()
-    @root = {}
+    @root = TrieNode.new()
   end
 
 
@@ -11,13 +11,15 @@ class Trie
 =end
   def insert(word)
     current_node = @root
-    for char in word
-      if current_node["#{char}"]
+    for char in word.chars
+      if current_node.children["#{char}"]
         current_node = current_node["#{char}"]
       else
-        new_node = TrieNode.new("#{char}")
-        current_node.
+        new_node = TrieNode.new()
+        current_node.children["#{char}"] = new_node
+        current_node = new_node
       end
+      current_node.children["*"] = 1
     end
   end
 
