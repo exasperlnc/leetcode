@@ -1,6 +1,6 @@
 class TrieNode
-  attr_reader :char
-  def initialize(char)
-    @char = char.downcase
+  attr_reader :children
+  def initialize()
+    @children = {}
   end
 end

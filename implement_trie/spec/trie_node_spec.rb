@@ -3,16 +3,18 @@ require './lib/trie_node'
 
 RSpec.describe TrieNode do
   it 'exists' do
-    node = TrieNode.new("a")
+    node = TrieNode.new()
 
     expect(node).to be_a(TrieNode)
     end
 
-    it 'downcases' do
-      node = TrieNode.new("A")
+    it 'adds children' do
+      node = TrieNode.new()
+      child = TrieNode.new()
+      expect(node.children).to_not have_key("a")
 
-      expect(node).to be_a(TrieNode)
-      expect(node.char).to eq("a")
+      node.children["a"] = child
+      expect(node.children).to have_key("a")
     end
   end
  

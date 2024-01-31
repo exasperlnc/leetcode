@@ -15,7 +15,8 @@ class Trie
       if current_node["#{char}"]
         current_node = current_node["#{char}"]
       else
-      
+        new_node = TrieNode.new("#{char}")
+        current_node.
       end
     end
   end
