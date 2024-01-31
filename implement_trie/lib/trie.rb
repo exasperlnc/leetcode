@@ -9,7 +9,7 @@ class Trie
   :type word: String
   :rtype: Void
 =end
-  def insert(word)
+ def insert(word)
     current_node = @root
     for char in word.chars
       if current_node.children["#{char}"]
@@ -21,25 +21,25 @@ class Trie
       end
       current_node.children["*"] = 1
     end
-  end
+ end
 
 
 =begin
   :type word: String
   :rtype: Boolean
 =end
-  def search(word)
-      
-  end
+ def search(word)
+
+ end
 
 
 =begin
   :type prefix: String
   :rtype: Boolean
 =end
-  def starts_with(prefix)
+ def starts_with(prefix)
       
-  end
+ end
 
 
 end
