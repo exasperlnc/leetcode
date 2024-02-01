@@ -16,11 +16,14 @@ def divide_array(nums, k)
       current_array << num
     else
       count = 1
+      # check if the nums in curr_array qualify with k
       answer << current_array
       current_array = [num]
     end
   end
+  # check if the nums in curr_array qualify with k
   answer << current_array
+
   # return the new array 
   return answer
 end
