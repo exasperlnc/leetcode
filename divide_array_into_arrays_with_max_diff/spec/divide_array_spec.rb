@@ -14,6 +14,10 @@ RSpec.describe 'Divide array' do
     @nums_3 = [1]
     @k_3 = 4
     @out_3 = []
+
+    @nums_4 = [15,13,12,13,12,14,12,2,3,13,12,14,14,13,5,12,12,2,13,2,2]
+    @k_4 = 2
+    @out_4 = []
   end
   
   it '1' do
@@ -26,5 +30,9 @@ RSpec.describe 'Divide array' do
 
   it '3' do
     expect(divide_array(@nums_3,@k_3)).to eq(@out_3)
+  end
+
+  it '4' do
+    expect(divide_array(@nums_4,@k_4)).to eq(@out_4)
   end
 end
