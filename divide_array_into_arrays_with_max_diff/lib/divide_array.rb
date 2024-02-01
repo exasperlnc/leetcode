@@ -17,11 +17,13 @@ def divide_array(nums, k)
     else
       count = 1
       # check if the nums in curr_array qualify with k
+      return [] if (current_array[1] - current_array[0] > k) || (current_array[2] - current_array[1] > k)
       answer << current_array
       current_array = [num]
     end
   end
   # check if the nums in curr_array qualify with k
+  return [] if (current_array[1] - current_array[0] > k) || (current_array[2] - current_array[1] > k)
   answer << current_array
 
   # return the new array 
