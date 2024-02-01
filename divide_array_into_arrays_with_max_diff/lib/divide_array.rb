@@ -8,19 +8,19 @@ def divide_array(nums, k)
   count = 0
   current_array = []
   # put the elements in arrays of three in order? 
-  nums.each do |num|
-  # how to double check answers are all within k? as you fill array? 
+  nums.sort.each do |num|
+    # how to double check answers are all within k? as you fill array? 
 
-  if count < 3
-    count += 1
-    current_array << num
-  else
-    count = 0
-    answer << current_array
-    current_array = [num]
+    if count < 3
+      count += 1
+      current_array << num
+    else
+      count = 1
+      answer << current_array
+      current_array = [num]
+    end
   end
-end
-answer << current_array
-# return the new array 
+  answer << current_array
+  # return the new array 
   return answer
 end
