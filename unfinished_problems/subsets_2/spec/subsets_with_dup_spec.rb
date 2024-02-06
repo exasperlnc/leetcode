@@ -6,7 +6,7 @@ RSpec.describe 'subsets with dup' do
     @nums_1 = [1,2,2]
     @out_1 = [[],[1],[1,2],[1,2,2],[2],[2,2]]
 
-    @nums_2 = 0
+    @nums_2 = [0]
     @out_2 = [[],[0]]
   end
 
