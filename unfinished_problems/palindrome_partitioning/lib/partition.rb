@@ -1,0 +1,3 @@
+def partition(s)
+  
+end
