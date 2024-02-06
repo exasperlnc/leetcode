@@ -1,25 +1,26 @@
 def combination_sum(candidates, target)
   @answers = []
+  @candidates = candidates
+  @target = target
 
   # recurse some stuff
-  recurse(0, [], candidates, target, 0)
+  recurse(0, [], 0)
 
   @answers
 end
 
-def recurse(i, current, candidates, target, total)
-  if total == target
+def recurse(i, current, total)
+  if total == @target
     @answers << current.dup
     return
   end
-  
-  if i >= candidates.length || total > target
-    return
-  end
-  
-  current.append(candidates[i])
-  recurse(i, current, candidates, target, total + candidates[i])
-  current.pop()
-  recurse(i+1, current, candidates, target, total)
 
+  return if i >= @candidates.length || total > @target
+
+  #add it
+  current << @candidates[i]
+  recurse(i, current, total + @candidates[i])
+  # don't add it
+  current.pop 
+  recurse(i+1, current, total) 
 end
