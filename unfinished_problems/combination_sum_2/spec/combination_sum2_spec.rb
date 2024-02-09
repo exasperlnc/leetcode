@@ -14,7 +14,7 @@ RSpec.describe 'combination sum 2' do
       ]
 
       @c2 = [2,5,2,1,2]
-      @t1 = 5
+      @t2 = 5
       @out_2 = 
         [
         [1,2,2],
