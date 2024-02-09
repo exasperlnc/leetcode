@@ -11,10 +11,10 @@ RSpec.describe 'subsets with dup' do
   end
 
   it '1' do
-    expect(subsets_with_dup(@nums_1)).to eq(@out_1)
+    expect(subsets_with_dup(@nums_1).sort).to eq(@out_1.sort)
   end
 
   it '2' do
-    expect(subsets_with_dup(@nums_2)).to eq(@out_2)
+    expect(subsets_with_dup(@nums_2).sort).to eq(@out_2.sort)
   end
 end
