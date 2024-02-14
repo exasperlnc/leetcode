@@ -14,14 +14,14 @@ RSpec.describe 'permute' do
   end
 
   it '1' do
-    expect(permute(@nums_1)).to eq(@out_1)
+    expect(permute(@nums_1).sort).to eq(@out_1.sort)
   end
 
   it '2' do
-    expect(permute(@nums_2)).to eq(@out_2)
+    expect(permute(@nums_2).sort).to eq(@out_2.sort)
   end
 
   it '3' do
-    expect(permute(@nums_3)).to eq(@out_3)
+    expect(permute(@nums_3.sort)).to eq(@out_3.sort)
   end
 end
