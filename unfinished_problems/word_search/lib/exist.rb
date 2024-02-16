@@ -1,6 +1,7 @@
 def exist(board, word)
   # check for the first letter function
-  current = word.chars[0]
+  count = 0
+  current = word.chars[count]
   for i in board.length do
     for j in board[i].length do
       if board[i][j] == current
@@ -27,22 +28,30 @@ def exist(board, word)
 end
 
 def check_n(board, word, i, j)
-
+  return false if !board[i-1]
+  return true if board[i-1][j] = word.chars[count]
+  return false
 end
 
 
 def check_s(board, word, i, j)
-
+  return false if !board[i+1]
+  return true if board[i+1][j] = word.chars[count]
+  return false
 end
 
 
 def check_e(board, word, i, j)
-
+  return false if !board[i][j+1]
+  return true if board[i][j+1] = word.chars[count]
+  return false
 end
 
 
 def check_w(board, word, i, j)
-
+  return false if !board[i][j+1]
+  return true if board[i][j+1] = word.chars[count]
+  return false
 end
 
 
