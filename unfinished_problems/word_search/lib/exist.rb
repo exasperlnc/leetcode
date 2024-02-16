@@ -1,6 +1,6 @@
 def exist(board, word)
   # check for the first letter function
-  current = word[0]
+  current = word.chars[0]
   for i in board.length do
     for j in board[i].length do
       if board[i][j] == current
