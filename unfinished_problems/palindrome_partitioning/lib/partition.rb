@@ -1,17 +1,20 @@
 def partition(s)
-  @s = s 
   @result = []
   @partition = []
+  @s = s 
 
   def dfs(i)
-    # base case 
-      # add partition dup to result
-      # return
-
+    if i >= @s.length
+      @result << @partition.dup 
+      return
+    end
+    
     (i...@s.length).each do |j|
-      # if its a palindrome, add to partition
-      # call dfs after the end of the palindrome (j+1)
-      # pop partition
+      if palindrome?(@s, i, j)
+        @partition << @s[i..j]
+        dfs(j+1)
+        @partition.pop
+      end   
     end
   end
 
@@ -20,11 +23,11 @@ def partition(s)
   @result
 end
 
-def palindrome?(s, i, j)
+def palindrome?(s, i , j)
   while i < j
     return false if s[i] != s[j]
     i += 1
-    j += 1
+    j -= 1
   end
   return true
 end
