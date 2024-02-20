@@ -7,7 +7,7 @@ RSpec.describe 'palindrome partitioning' do
     @out_1 = [["a","a","b"],["aa","b"]]
 
     @s_2 = "a"
-    @out_2 [["a"]]
+    @out_2 = [["a"]]
   end
 
   it '1' do
