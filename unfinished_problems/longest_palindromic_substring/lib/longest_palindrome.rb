@@ -7,7 +7,7 @@ def longest_palindrome(s)
     return if string.length <= 1
     # if true, save result
     if palindrome?(string)
-      @result = string
+      @result = string if string.length > @result.length
       return
     else
       # break string down at front and back and feed it back in
