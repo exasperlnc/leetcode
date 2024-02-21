@@ -1,5 +1,5 @@
 require 'rspec'
-require './lib/rob_2'
+require './lib/rob'
 
 RSpec.describe 'rob 2' do
   before :all do
@@ -8,6 +8,9 @@ RSpec.describe 'rob 2' do
 
     @n2 = [1,2,3,1]
     @out_2 = 4
+
+    @n_3 = [200,3,140,20,10]
+    @out_3 = 340
     end
 
     it '1' do
@@ -18,4 +21,7 @@ RSpec.describe 'rob 2' do
         expect(rob(@n2)).to eq(@out_2)
     end
     
+    it '3' do
+      expect(rob(@n_3)).to eq(@out_3)
+    end
   end
