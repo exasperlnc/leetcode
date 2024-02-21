@@ -1,6 +1,6 @@
 def longest_palindrome(s)
-  # base case, short length? 
-  @result = ""
+  # base case, short length?
+  @result = "#{s[0]}"
   # check if current string is palindrome
   def dfs(string)
     # base case, string length == 1?
