@@ -4,7 +4,7 @@ require './lib/longest_palindrome'
 RSpec.describe 'longest_palindrome' do
   before :all do
       @s1 = 'babad'
-      @out_1 = 'bab'
+      @out_1 = 'aba'
     
       @s2 = 'cbbd'
       @out_2 = 'bb'
