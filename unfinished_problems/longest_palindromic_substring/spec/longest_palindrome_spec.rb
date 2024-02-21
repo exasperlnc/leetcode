@@ -8,6 +8,9 @@ RSpec.describe 'longest_palindrome' do
     
       @s2 = 'cbbd'
       @out_2 = 'bb'
+
+      @s3 = "a"
+      @out_3 = "a"
     end
 
     it '1' do
@@ -18,4 +21,7 @@ RSpec.describe 'longest_palindrome' do
       expect(longest_palindrome(@s2)).to eq(@out_2)
     end
     
+    it '3' do
+      expect(longest_palindrome(@s3)).to eq(@out_3)
+    end
   end
