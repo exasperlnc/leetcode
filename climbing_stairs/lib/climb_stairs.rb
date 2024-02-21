@@ -1,19 +1,9 @@
 def climb_stairs(n)
-  @ans = 0
-
-  recurse(n, 0)
-
-  @ans 
-end
-
-def recurse(number, total)
-  if number == total
-    @ans += 1
-    return
-  elsif total > number
-    return
-  else 
-    recurse(number, total + 1)
-    recurse(number, total + 2)
+  one, two = 1, 1
+  (0...n-1).each do 
+    temp = one
+    one = one + two
+    two = temp
   end
+  return one
 end
