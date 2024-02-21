@@ -1,8 +1,9 @@
 def rob(nums)
-  # save array with 3 
+dp = Array.new(nums.size + 3) {0}
 
-  # iterate with index
-    # dp+3 = dpi,dpi+1.max + num
+nums.each_with_index do |num, i|
+  dp[i+3] = [dp[i], dp[i+1]].max + num
+end
 
-  # dp-1,dp-2.max
+[dp[-1], dp[-2]].max
 end
