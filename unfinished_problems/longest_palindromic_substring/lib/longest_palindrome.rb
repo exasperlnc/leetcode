@@ -1,11 +1,14 @@
 def longest_palindrome(s)
   # base case, short length?
   @result = "#{s[0]}"
+  @dp = {}
   # check if current string is palindrome
   def dfs(string)
     # base case, string length == 1?
     return if string.length <= 1
     # if true, save result
+    return if @dp[string]
+    @dp[string]
     if palindrome?(string)
       @result = string if string.length > @result.length
       return
@@ -21,6 +24,5 @@ def longest_palindrome(s)
 end
 
 def palindrome?(string)
-  return true if string == string.reverse
-  return false
+  string == string.reverse
 end
