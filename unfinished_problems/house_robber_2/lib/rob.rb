@@ -1,13 +1,15 @@
 def rob(nums)
-  return nums.max if nums.size < 4
-  # declare dp1 with default values 0 and size of nums
-  # first one is first nums
-  # second one is max of first and second nums
-  # iterate through all but last number
+  first = rob_1(nums[0...-1]) 
+  last = rob_1(nums[1..-1])
+  first > last ? first : last
+end
 
-  # declare dp2 with default values 0 and size of nums
-  # dp2[1 is nums[1]]
-  # iterate through second an onward indexes
+def rob_1(nums)
+  dp = Array.new(nums.size + 2) {0}
 
-  # return dp1-2, and dp2 -1
+  nums.each_with_index do |num, i|
+    dp[i+3] = [dp[i], dp[i+1]].max + num
+  end
+
+  [dp[-1], dp[-2]].max
 end
